@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PiForge — Mathijs Wouters | Custom Raspberry Pi Builds Utrecht</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<canvas id="circuit-bg"></canvas>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <span class="logo-icon">⬡</span>
+      Pi<span class="logo-accent">Forge</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#builds">Builds</a></li>
+      <li><a href="#verhaal">Mijn verhaal</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#configurator">Configureer</a></li>
+      <li><a href="#specs">Specs</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="https://wa.me/31631297550" target="_blank" class="btn-nav">💬 WhatsApp</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <ul>
+    <li><a href="#builds" onclick="closeMobile()">Builds</a></li>
+    <li><a href="#verhaal" onclick="closeMobile()">Mijn verhaal</a></li>
+    <li><a href="#reviews" onclick="closeMobile()">Reviews</a></li>
+    <li><a href="#configurator" onclick="closeMobile()">Configureer</a></li>
+    <li><a href="#specs" onclick="closeMobile()">Specs</a></li>
+    <li><a href="#contact" onclick="closeMobile()">Contact</a></li>
+  </ul>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">Mathijs Wouters · Utrecht · Handgemaakt</div>
+    <h1 class="hero-title">
+      Jouw Raspberry Pi.<br />
+      <span class="hero-accent">Jouw Regels.</span>
+    </h1>
+    <p class="hero-sub">
+      Van retro gaming station tot lokale AI, media server, privé cloud of crypto node —
+      ik bouw elke Pi precies naar jouw wensen. Open source. Geen abonnementen. Volledige controle. Voor élk budget.
+    </p>
+    <div class="hero-cta">
+      <a href="https://wa.me/31631297550" target="_blank" class="btn-primary">💬 Direct WhatsApp</a>
+      <a href="#builds" class="btn-ghost">Bekijk builds</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">€35</span><span class="stat-label">Vanaf prijs</span></div>
+      <div class="stat-div"></div>
+      <div class="stat"><span class="stat-num">12+</span><span class="stat-label">Build types</span></div>
+      <div class="stat-div"></div>
+      <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Open source</span></div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="pi-ring pi-ring-3"></div>
+    <div class="pi-ring pi-ring-2"></div>
+    <div class="pi-ring pi-ring-1"></div>
+    <div class="pi-board">
+      <div class="pi-chip">
+        <div class="pi-chip-inner"><span>BCM</span><span>2712</span></div>
+        <div class="pi-pins top"></div>
+        <div class="pi-pins bottom"></div>
+        <div class="pi-pins left"></div>
+        <div class="pi-pins right"></div>
+      </div>
+      <div class="pi-ports">
+        <div class="pi-port usb">USB</div>
+        <div class="pi-port hdmi">HDMI</div>
+        <div class="pi-port eth">ETH</div>
+      </div>
+      <div class="pi-led led-green"></div>
+      <div class="pi-led led-red"></div>
+    </div>
+  </div>
+</section>
+
+<!-- VERHAAL SECTIE -->
+<section class="verhaal" id="verhaal">
+  <div class="section-inner">
+    <div class="verhaal-wrapper">
+      <div class="verhaal-label">
+        <span class="section-eyebrow">Wie is Mathijs?</span>
+        <div class="verhaal-avatar">M</div>
+        <div class="verhaal-naam">Mathijs Wouters</div>
+        <div class="verhaal-sub">Utrecht · 25 jaar</div>
+        <a href="https://wa.me/31631297550" target="_blank" class="btn-primary" style="margin-top:1.5rem;display:inline-block">
+          💬 Stuur een bericht
+        </a>
+      </div>
+
+      <div class="verhaal-tekst">
+        <h2>Van tent naar caravan,<br/><span class="hero-accent">van niets naar alles.</span></h2>
+
+        <p class="verhaal-intro">
+          Het begon niet in een kantoor. Niet in een garage vol gereedschap. Het begon op een camping in Westbroek — met een slaapzak, een oude laptop, en een klein groen printplaatje ter grootte van een creditcard.
+        </p>
+
+        <div class="verhaal-blok">
+          <div class="verhaal-quote">"Ik had opeens tijd. Veel tijd. En dat kleine moederbord bleek een heel universum."</div>
+        </div>
+
+        <p>
+          Op mijn 25e belandde ik — zoals het leven soms gaat — op een camping in het Utrechtse Westbroek. Wat begon als een tijdelijke situatie werd weken, maanden. Dag en nacht. Eerst in een tent, later in een caravan. Maar in plaats van stilstand vond ik daar iets wat ik in geen jaren had gehad: tijd om te ontdekken.
+        </p>
+
+        <p>
+          Ik pakte een Raspberry Pi — een klein computertje van amper €60 — en begon te experimenteren. Wat kan dit ding eigenlijk? Kan ik er een mediaserver op draaien? Een VPN? Een eigen cloud? Retro games? Een AI die lokaal draait zonder internet? De antwoorden kwamen één voor één, en met elk antwoord groeide iets wat ik niet had verwacht: <strong>voldoening</strong>.
+        </p>
+
+        <p>
+          Elke dag dat er iets nieuws werkte, voelde het als bouwen. Niet met stenen of hout — maar met kennis, code en creativiteit. Van een simpele mediaspeler naar een complete privé-infrastructuur. Van tent naar caravan. Van niets naar iets.
+        </p>
+
+        <div class="verhaal-blok">
+          <div class="verhaal-quote">"Technologie hoeft niet duur of ingewikkeld te zijn. Voor iedereen — elke portemonnee — is er een kans om te beginnen."</div>
+        </div>
+
+        <p>
+          Dat is precies waarom ik PiForge ben begonnen. Ik wil die fascinatie delen. Ik wil laten zien dat je voor een paar tientjes een apparaatje in handen kunt hebben dat jouw muziek streamt, jouw bestanden bewaart, jouw netwerk beveiligt — of zelfs een lokale AI draait die niemand anders kan inzien. Geen maandelijks abonnement. Geen grote techbedrijven die meekijken. Gewoon jij, jouw Pi, en wat je ermee bouwt.
+        </p>
+
+        <p>
+          Of je nu nieuwsgierig bent, technisch onderlegd, of gewoon iemand die moe is van Google en Amazon — ik help je op weg. Persoonlijk, betaalbaar, en met plezier.
+        </p>
+
+        <div class="verhaal-badges">
+          <span>🏕️ Westbroek</span>
+          <span>📍 Utrecht</span>
+          <span>🔓 Open source</span>
+          <span>🤖 Lokale AI</span>
+          <span>🪙 Crypto-vriendelijk</span>
+          <span>💡 Voor elk budget</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUILDS GRID -->
+<section class="builds" id="builds">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-eyebrow">Wat ik bouw</span>
+      <h2>Kies je build type</h2>
+      <p>Elke build is volledig op maat — hardware selectie, OS configuratie en software installatie inbegrepen. Plug in, aanzetten, klaar.</p>
+    </div>
+
+    <div class="builds-grid">
+
+      <div class="build-card" data-category="media">
+        <div class="build-icon">📺</div>
+        <div class="build-tag">Media</div>
+        <h3>Kodi Media Center</h3>
+        <p>Volledig geconfigureerde Kodi met LibreELEC of OSMC. 4K, add-ons, remote — kant en klaar uit de doos.</p>
+        <ul class="build-features">
+          <li>LibreELEC / OSMC / CoreELEC</li>
+          <li>4K HDR ondersteuning</li>
+          <li>Netflix, Spotify, YouTube</li>
+          <li>Remote bediening ingesteld</li>
+        </ul>
+        <div class="build-price">Vanaf €55</div>
+        <a href="https://wa.me/31631297550?text=Hoi%20Mathijs!%20Ik%20wil%20graag%20een%20Kodi%20build." target="_blank" class="build-link">💬 Vraag aan →</a>
+      </div>
+
+      <div class="build-card featured" data-category="security">
+        <div class="build-badge">Populair</div>
+        <div class="build-icon">🔒</div>
+        <div class="build-tag">Privacy</div>
+        <h3>LibreSec Privacy Box</h3>
+        <p>Pi-hole, WireGuard VPN, Tor en firewall in één apparaat. Jouw netwerk, jouw privacy — volledig offline beheer.</p>
+        <ul class="build-features">
+          <li>Pi-hole — geen advertenties meer</li>
+          <li>WireGuard VPN server</li>
+          <li>Unbound DNS resolver</li>
+          <li>Fail2ban & UFW firewall</li>
+        </ul>
+        <div class="build-price">Vanaf €75</div>
+        <a href="https://wa.me/31631297550?text=Hoi%20Mathijs!%20Ik%20wil%20graag%20een%20LibreSec%20build." target="_blank" class="build-link">💬 Vraag aan →</a>
+      </div>
+
+      <div class="build-card" data-category="ai">
+        <div class="build-badge new-badge">Nieuw</div>
+        <div class="build-icon">🤖</div>
+        <div class="build-tag">Lokale AI</div>
+        <h3>Offline AI Assistent</h3>
+        <p>Ollama met LLaMA of Mistral draaiend op je eigen Pi. Geen internet nodig, geen data naar de cloud — jouw AI, jouw gesprekken.</p>
+        <ul class="build-features">
+          <li>Ollama + open source LLM</li>
+          <li>Volledig offline — privé by design</li>
+          <li>Web interface (Open WebUI)</li>
+          <li>Uitbreidbaar met eigen data</li>
+        </ul>
+        <div class="build-price">Vanaf €95</div>
+        <a href="https://wa.me/31631297550?text=Hoi%20Mathijs!%20Ik%20wil%20een%20lokale%20AI%20build." target="_blank" class="build-link">💬 Vraag aan →</a>
+      </div>
+
+      <div class="build-card" data-category="nas">
+        <div class="build-icon">💾</div>
+        <div class="build-tag">Opslag</div>
+        <h3>NAS Thuisserver</h3>
+        <p>OpenMediaVault of TrueNAS op een Pi. RAID, Samba shares, automatische backups — jouw eigen Google Drive.</p>
+        <ul class="build-features">
+          <li>OpenMediaVault / TrueNAS</li>
+          <li>RAID 0/1 configuratie</li>
+          <li>Samba, NFS, SFTP</li>
+          <li>Tot 4x HDD/SSD</li>
+        </ul>
+        <div class="build-price">Vanaf €80</div>
+        <a href="https://wa.me/31631297550?text=Hoi%20Mathijs!%20Ik%20wil%20graag%20een%20NAS%20build." target="_blank" class="build-link">💬 Vraag aan →</a>
+      </div>
+
+      <div class="build-card" data-category="cloud">
+        <div class="build-icon">☁️</div>
+        <div class="build-tag">Privé Cloud</div>
+        <h3>Nextcloud Server</h3>
+        <p>Nextcloud en Vaultwarden op eigen hardware. Stop met Google Drive — begin met jouw eigen cloud.</p>
+        <ul class="build-features">
+          <li>Nextcloud (bestanden, agenda, contacten)</li>
+          <li>Vaultwarden wachtwoordkluis</li>
+          <li>SSL / HTTPS standaard</li>
+          <li>Automatische updates</li>
+        </ul>
+        <div class="build-price">Vanaf €70</div>
+        <a href="https://wa.me/31631297550?text=Hoi%20Mathijs!%20Ik%20wil%20een%20Nextcloud%20build." target="_blank" class="build-link">💬 Vraag aan →</a>
+      </div>
+
+      <div class="build-card" data-category="gaming">
+        <div class="build-icon">🎮</div>
+        <div class="build-tag">Gaming</div>
+        <h3>Retro Gaming Station</h3>
+        <p>RetroPie of Batocera met emulators voor NES, SNES, N64, PS1, Arcade en meer. Controllers gecalibreerd en klaar.</p>
+        <ul class="build-features">
+          <li>RetroPie / Batocera</li>
+          <li>30+ emulators geconfigureerd</li>
+          <li>Controllers klaar voor gebruik</li>
+          <li>Custom thema naar keuze</li>
+        </ul>
+        <div class="build-price">Vanaf €55</div>
+        <a href="https://wa.me/31631297550?text=Hoi%20Mathijs!%20Ik%20wil%20een%20retro%20gaming%20build." target="_blank" class="build-link">💬 Vraag aan →</a>
+      </div>
+
+      <div class="build-card" data-category="crypto">
+        <div class="build-icon">🪙</div>
+        <div class="build-tag">Crypto</div>
+        <h3>Monero Node & Wallet</h3>
+        <p>Draai je eigen Monero node en wallet volledig offline. Maximale privacy, geen derde partij, betaling mogelijk in XMR.</p>
+        <ul class="build-features">
+          <li>Monero full node (monerod)</li>
+          <li>Offline cold wallet setup</li>
+          <li>Feather Wallet interface</li>
+          <li>Betaling in Monero mogelijk ✓</li>
+        </ul>
+        <div class="build-price">Vanaf €85</div>
+        <a href="https://wa.me/31631297550?text=Hoi%20Mathijs!%20Ik%20wil%20een%20Monero%20node%20build." target="_blank" class="build-link">💬 Vraag aan →</a>
+      </div>
+
+      <div class="build-card" data-category="server">
+        <div class="build-icon">🖥️</div>
+        <div class="build-tag">Hosting</div>
+        <h3>Web & App Server</h3>
+        <p>LAMP/LEMP stack, Docker, Nginx reverse proxy. Draai je eigen websites en apps thuis — voor altijd gratis.</p>
+        <ul class="build-features">
+          <li>Nginx / Apache / Caddy</li>
+          <li>Docker + Portainer UI</li>
+          <li>WordPress / Ghost ready</li>
+          <li>SSL met Let's Encrypt</li>
+        </ul>
+        <div class="build-price">Vanaf €65</div>
+        <a href="https://wa.me/31631297550?text=Hoi%20Mathijs!%20Ik%20wil%20een%20webserver%20build." target="_blank" class="build-link">💬 Vraag aan →</a>
+      </div>
+
+      <div class="build-card" data-category="smart">
+        <div class="build-icon">🏠</div>
+        <div class="build-tag">Smart Home</div>
+        <h3>Home Assistant Hub</h3>
+        <p>Home Assistant OS met Zigbee2MQTT, Node-RED en volledige automatisering van je slimme thuis — zonder cloud.</p>
+        <ul class="build-features">
+          <li>Home Assistant OS</li>
+          <li>Zigbee / Z-Wave support</li>
+          <li>Node-RED automations</li>
+          <li>Matter / Thread ready</li>
+        </ul>
+        <div class="build-price">Vanaf €75</div>
+        <a href="https://wa.me/31631297550?text=Hoi%20Mathijs!%20Ik%20wil%20een%20Home%20Assistant%20build." target="_blank" class="build-link">💬 Vraag aan →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-eyebrow">Wat klanten zeggen</span>
+      <h2>Echte builds, echte reacties.</h2>
+      <p>Geen steekproef, geen ingekochte sterren — gewoon wat mensen terugstuurden na hun build.</p>
+    </div>
+
+    <div class="reviews-grid">
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-build">LibreSec Privacy Box</div>
+        <p class="review-quote">Ik was helemaal klaar met routers die stiekem thuisbellen naar fabrikanten in drie landen. Mathijs heeft niet zomaar een kant-en-klaar image erop gegooid, maar gekeken wat ik écht nodig had — Pi-hole, WireGuard, een vleugje Tor. Als er iets niet werkte kreeg ik uitleg in normale-mensentaal, geen Reddit-jargon.</p>
+        <div class="review-author">— eindelijk niet meer constant het product</div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-build">Retro Gaming Station</div>
+        <p class="review-quote">Ik wilde geen "retro gevoel", ik wilde mijn jeugd terug. De controllers stonden al gekalibreerd toen ik uitpakte, en het thema sloot exact aan bij een screenshot dat ik had gestuurd. Voelt sneller en stabieler dan de originele hardware ooit was.</p>
+        <div class="review-author">— zoon van 34, gedraagt zich weer als 9</div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-build">Offline AI Assistent</div>
+        <p class="review-quote">Een eigen taalmodel, volledig offline, kleiner dan mijn broodtrommel. Geen internetverbinding nodig, geen gesprekken die ergens in een datacenter in Virginia belanden. Voor brainstormen en samenvatten precies genoeg — en het went razendsnel.</p>
+        <div class="review-author">— nu de enige die mijn aantekeningen leest</div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-build">NAS Thuisserver</div>
+        <p class="review-quote">Twintig jaar aan foto's stonden verspreid over drie clouddiensten en één USB-stick die al jaren "tijdelijk" in mijn broekzak zit. Nu weet ik zeker dat alles ergens staat én een back-up heeft. Instellen kostte mij letterlijk nul moeite.</p>
+        <div class="review-author">— slaapt een stuk beter sinds ik weet waar mijn bestanden wonen</div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-build">Nextcloud Server</div>
+        <p class="review-quote">Nextcloud voor bestanden en agenda, Vaultwarden als wachtwoordkluis, alles via HTTPS zoals het hoort. Voelt exact als de grote clouddiensten, behalve dat ik nu weet wie erbij kan — niemand, behalve ik. En geen abonnement dat na een jaar stiekem duurder wordt.</p>
+        <div class="review-author">— een digitale doe-het-zelver, in de goede zin</div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-build">Monero Node & Wallet</div>
+        <p class="review-quote">Als je ooit een volledige node hebt gedraaid op een oude laptop die klinkt als een straaljager: dit is het tegenovergestelde. Ik heb zelfs het hele traject in XMR betaald — geen tussenpartij, geen account, geen gedoe. Precies zoals het hoort te werken.</p>
+        <div class="review-author">— eindelijk een node die niet klinkt alsof hij gaat opstijgen</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- VOOR ELK BUDGET BANNER -->
+<section class="budget-banner">
+  <div class="section-inner budget-inner">
+    <div class="budget-tekst">
+      <h2>Voor <span class="hero-accent">élke portemonnee</span> een kans.</h2>
+      <p>Ik geloof dat technologie toegankelijk moet zijn voor iedereen. Samen kijken we wat past binnen jouw budget — zonder in te leveren op kwaliteit of privacy. Betalen kan ook in <strong>Monero (XMR)</strong> voor maximale anonimiteit.</p>
+    </div>
+    <div class="budget-cta">
+      <a href="https://wa.me/31631297550?text=Hoi%20Mathijs!%20Ik%20wil%20graag%20weten%20wat%20mogelijk%20is%20binnen%20mijn%20budget." target="_blank" class="btn-primary">💬 Vertel mij je budget</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONFIGURATOR -->
+<section class="configurator" id="configurator">
+  <div class="section-inner">
+    <div class="section-header light">
+      <span class="section-eyebrow">Bouw je eigen</span>
+      <h2>Configureer jouw Pi</h2>
+      <p>Vul het formulier in — of stuur gewoon een WhatsApp. Ik denk graag met je mee.</p>
+    </div>
+
+    <div class="config-wrapper">
+      <div class="config-steps">
+        <div class="config-step active" data-step="1">
+          <div class="step-num">1</div>
+          <div><strong>Hardware</strong><span>Model & opslag</span></div>
+        </div>
+        <div class="config-step" data-step="2">
+          <div class="step-num">2</div>
+          <div><strong>Software</strong><span>OS & apps</span></div>
+        </div>
+        <div class="config-step" data-step="3">
+          <div class="step-num">3</div>
+          <div><strong>Extras</strong><span>Case & support</span></div>
+        </div>
+        <div class="config-step" data-step="4">
+          <div class="step-num">4</div>
+          <div><strong>Offerte</strong><span>Aanvraag</span></div>
+        </div>
+      </div>
+
+      <div class="config-form">
+        <!-- Step 1 -->
+        <div class="form-step active" id="step1">
+          <h3>Selecteer hardware</h3>
+          <div class="option-grid">
+            <label class="option-card">
+              <input type="radio" name="model" value="pi5-4" />
+              <div class="option-inner"><span class="option-icon">⚡</span><strong>Raspberry Pi 5</strong><span>4GB — €70</span></div>
+            </label>
+            <label class="option-card">
+              <input type="radio" name="model" value="pi5-8" />
+              <div class="option-inner"><span class="option-icon">🔥</span><strong>Raspberry Pi 5</strong><span>8GB — €90</span></div>
+            </label>
+            <label class="option-card">
+              <input type="radio" name="model" value="pi4-8" />
+              <div class="option-inner"><span class="option-icon">💪</span><strong>Raspberry Pi 4</strong><span>8GB — €65</span></div>
+            </label>
+            <label class="option-card">
+              <input type="radio" name="model" value="pi-zero2" />
+              <div class="option-inner"><span class="option-icon">🪶</span><strong>Pi Zero 2 W</strong><span>Compact — €20</span></div>
+            </label>
+          </div>
+          <h4 style="margin:2rem 0 1rem">Opslag</h4>
+          <div class="option-grid cols-3">
+            <label class="option-card"><input type="radio" name="storage" value="32" /><div class="option-inner"><strong>32 GB</strong><span>MicroSD</span></div></label>
+            <label class="option-card"><input type="radio" name="storage" value="64" /><div class="option-inner"><strong>64 GB</strong><span>MicroSD</span></div></label>
+            <label class="option-card"><input type="radio" name="storage" value="ssd256" /><div class="option-inner"><strong>256 GB</strong><span>NVMe SSD</span></div></label>
+            <label class="option-card"><input type="radio" name="storage" value="ssd512" /><div class="option-inner"><strong>512 GB</strong><span>NVMe SSD</span></div></label>
+            <label class="option-card"><input type="radio" name="storage" value="ssd1tb" /><div class="option-inner"><strong>1 TB</strong><span>NVMe SSD</span></div></label>
+            <label class="option-card"><input type="radio" name="storage" value="custom" /><div class="option-inner"><strong>Op maat</strong><span>Eigen wens</span></div></label>
+          </div>
+          <div class="form-nav">
+            <div></div>
+            <button class="btn-primary" onclick="nextStep(2)">Volgende →</button>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="form-step" id="step2">
+          <h3>Kies je software</h3>
+          <div class="option-grid">
+            <label class="option-card"><input type="checkbox" name="software" value="kodi" /><div class="option-inner"><span class="option-icon">📺</span><strong>Kodi</strong><span>Media center</span></div></label>
+            <label class="option-card"><input type="checkbox" name="software" value="pihole" /><div class="option-inner"><span class="option-icon">🚫</span><strong>Pi-hole</strong><span>Ad blocker</span></div></label>
+            <label class="option-card"><input type="checkbox" name="software" value="nextcloud" /><div class="option-inner"><span class="option-icon">☁️</span><strong>Nextcloud</strong><span>Privé cloud</span></div></label>
+            <label class="option-card"><input type="checkbox" name="software" value="ai" /><div class="option-inner"><span class="option-icon">🤖</span><strong>Lokale AI</strong><span>Ollama + LLM</span></div></label>
+            <label class="option-card"><input type="checkbox" name="software" value="retropie" /><div class="option-inner"><span class="option-icon">🎮</span><strong>RetroPie</strong><span>Retro gaming</span></div></label>
+            <label class="option-card"><input type="checkbox" name="software" value="homeassistant" /><div class="option-inner"><span class="option-icon">🏠</span><strong>Home Assistant</strong><span>Smart home</span></div></label>
+            <label class="option-card"><input type="checkbox" name="software" value="omv" /><div class="option-inner"><span class="option-icon">💾</span><strong>OpenMediaVault</strong><span>NAS server</span></div></label>
+            <label class="option-card"><input type="checkbox" name="software" value="monero" /><div class="option-inner"><span class="option-icon">🪙</span><strong>Monero Node</strong><span>Crypto privacy</span></div></label>
+            <label class="option-card"><input type="checkbox" name="software" value="wireguard" /><div class="option-inner"><span class="option-icon">🔐</span><strong>WireGuard VPN</strong><span>Veilig netwerk</span></div></label>
+          </div>
+          <div class="form-nav">
+            <button class="btn-ghost" onclick="nextStep(1)">← Terug</button>
+            <button class="btn-primary" onclick="nextStep(3)">Volgende →</button>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="form-step" id="step3">
+          <h3>Behuizing & extra's</h3>
+          <div class="option-grid">
+            <label class="option-card"><input type="radio" name="case" value="none" /><div class="option-inner"><span class="option-icon">📦</span><strong>Geen case</strong><span>Alleen board</span></div></label>
+            <label class="option-card"><input type="radio" name="case" value="standard" /><div class="option-inner"><span class="option-icon">⬛</span><strong>Standaard</strong><span>Zwart aluminium</span></div></label>
+            <label class="option-card"><input type="radio" name="case" value="argon" /><div class="option-inner"><span class="option-icon">🌡️</span><strong>Argon ONE</strong><span>Met fan koeling</span></div></label>
+            <label class="option-card"><input type="radio" name="case" value="rack" /><div class="option-inner"><span class="option-icon">🖧</span><strong>Rack mount</strong><span>19" server rack</span></div></label>
+            <label class="option-card"><input type="radio" name="case" value="custom" /><div class="option-inner"><span class="option-icon">✨</span><strong>3D geprint</strong><span>Custom design</span></div></label>
+          </div>
+          <h4 style="margin:2rem 0 1rem">Extra diensten</h4>
+          <div class="option-grid cols-3">
+            <label class="option-card"><input type="checkbox" name="extra" value="support3" /><div class="option-inner"><strong>3 mnd support</strong><span>WhatsApp hulp</span></div></label>
+            <label class="option-card"><input type="checkbox" name="extra" value="remote" /><div class="option-inner"><strong>Remote beheer</strong><span>SSH toegang</span></div></label>
+            <label class="option-card"><input type="checkbox" name="extra" value="update" /><div class="option-inner"><strong>Auto updates</strong><span>Cron script</span></div></label>
+          </div>
+          <div class="form-nav">
+            <button class="btn-ghost" onclick="nextStep(2)">← Terug</button>
+            <button class="btn-primary" onclick="nextStep(4)">Volgende →</button>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="form-step" id="step4">
+          <h3>Jouw aanvraag</h3>
+          <div class="form-fields">
+            <div class="field-row">
+              <div class="field"><label>Voornaam</label><input type="text" placeholder="Jan" /></div>
+              <div class="field"><label>Achternaam</label><input type="text" placeholder="de Vries" /></div>
+            </div>
+            <div class="field"><label>E-mailadres</label><input type="email" placeholder="jan@example.nl" /></div>
+            <div class="field"><label>WhatsApp / Telefoon</label><input type="tel" placeholder="+31 6 ..." /></div>
+            <div class="field">
+              <label>Betaalmethode voorkeur</label>
+              <select>
+                <option value="">Selecteer...</option>
+                <option>iDEAL / Tikkie</option>
+                <option>Contant (afhalen Utrecht)</option>
+                <option>Monero (XMR) — anoniem</option>
+                <option>Nog niet zeker</option>
+              </select>
+            </div>
+            <div class="field"><label>Extra wensen</label><textarea placeholder="Vertel wat je wil bereiken..." rows="4"></textarea></div>
+            <div class="field">
+              <label>Budget indicatie</label>
+              <select>
+                <option value="">Selecteer...</option>
+                <option>Onder €75</option>
+                <option>€75 – €150</option>
+                <option>€150 – €300</option>
+                <option>€300 – €500</option>
+                <option>Meer dan €500</option>
+              </select>
+            </div>
+          </div>
+          <div class="summary-box" id="summary-box">
+            <div class="summary-title">Jouw selectie</div>
+            <div id="summary-content">Vul de vorige stappen in...</div>
+          </div>
+          <div class="form-nav">
+            <button class="btn-ghost" onclick="nextStep(3)">← Terug</button>
+            <button class="btn-primary" onclick="submitForm()">Offerte aanvragen ✓</button>
+          </div>
+        </div>
+
+        <!-- Success -->
+        <div class="form-step" id="step5">
+          <div class="success-state">
+            <div class="success-icon">✓</div>
+            <h3>Aanvraag ontvangen!</h3>
+            <p>Mathijs neemt snel contact op — of stuur direct een WhatsApp voor snellere reactie.</p>
+            <a href="https://wa.me/31631297550" target="_blank" class="btn-primary" style="margin-top:1.5rem;display:inline-block">💬 WhatsApp Mathijs</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPECS -->
+<section class="specs" id="specs">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-eyebrow">Technologie</span>
+      <h2>De software stack</h2>
+    </div>
+    <div class="specs-grid">
+      <div class="spec-category">
+        <h4>Besturingssystemen</h4>
+        <div class="spec-tags">
+          <span>Raspberry Pi OS</span><span>Ubuntu Server</span><span>LibreELEC</span>
+          <span>OSMC</span><span>DietPi</span><span>Manjaro ARM</span>
+          <span>Arch Linux ARM</span><span>Home Assistant OS</span>
+        </div>
+      </div>
+      <div class="spec-category">
+        <h4>Privacy & Beveiliging</h4>
+        <div class="spec-tags">
+          <span>Pi-hole</span><span>WireGuard</span><span>Unbound DNS</span>
+          <span>Fail2ban</span><span>UFW Firewall</span><span>Tor</span>
+          <span>OpenVPN</span><span>ClamAV</span>
+        </div>
+      </div>
+      <div class="spec-category">
+        <h4>AI & Crypto</h4>
+        <div class="spec-tags">
+          <span>Ollama</span><span>LLaMA 3</span><span>Mistral</span>
+          <span>Open WebUI</span><span>Monero Node</span><span>Feather Wallet</span>
+          <span>Monerod</span><span>XMR betaling</span>
+        </div>
+      </div>
+      <div class="spec-category">
+        <h4>Media & Gaming</h4>
+        <div class="spec-tags">
+          <span>Kodi</span><span>Jellyfin</span><span>Plex</span>
+          <span>RetroPie</span><span>Batocera</span><span>EmulationStation</span>
+          <span>Moonlight</span><span>Sunshine</span>
+        </div>
+      </div>
+      <div class="spec-category">
+        <h4>Server & Cloud</h4>
+        <div class="spec-tags">
+          <span>Docker</span><span>Portainer</span><span>Nginx</span>
+          <span>Caddy</span><span>Nextcloud</span><span>OpenMediaVault</span>
+          <span>Vaultwarden</span><span>Gitea</span>
+        </div>
+      </div>
+      <div class="spec-category">
+        <h4>Smart Home</h4>
+        <div class="spec-tags">
+          <span>Home Assistant</span><span>Zigbee2MQTT</span><span>Node-RED</span>
+          <span>Matter</span><span>Z-Wave</span><span>ESPHome</span>
+          <span>MQTT Broker</span><span>InfluxDB</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY MATHIJS -->
+<section class="why">
+  <div class="section-inner">
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">🔧</div>
+        <h3>Plug & Play geleverd</h3>
+        <p>Je ontvangt een volledig geconfigureerd apparaat. Aansluiten, aanzetten — klaar. Geen technische kennis vereist.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">💬</div>
+        <h3>Persoonlijk contact</h3>
+        <p>Je hebt direct contact met Mathijs — de maker zelf. Geen callcenter, geen ticket systeem. Gewoon WhatsApp.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">💶</div>
+        <h3>Voor elk budget</h3>
+        <p>Vanaf €35 is er al iets mogelijk. Samen kijken we naar wat past — altijd eerlijk advies, nooit meer verkopen dan nodig.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🔓</div>
+        <h3>Altijd open source</h3>
+        <p>Alles wat ik installeer is vrij, open en transparant. Geen vendor lock-in. Jij blijft eigenaar van je eigen setup.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🪙</div>
+        <h3>Betalen in Monero</h3>
+        <p>Voor wie maximale privacy wil: ik accepteer Monero (XMR) als betaalmiddel. Volledig anoniem, volledig gedecentraliseerd.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">📍</div>
+        <h3>Utrecht & omgeving</h3>
+        <p>Afhalen in Utrecht mogelijk. Levering door heel Nederland. Installatie op locatie bespreekbaar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-inner contact-inner">
+    <div class="contact-info">
+      <span class="section-eyebrow">Neem contact op</span>
+      <h2>Hoi, ik ben Mathijs.</h2>
+      <p>Weet je niet zeker wat je nodig hebt? Stuur me gewoon een berichtje. Ik denk graag mee, gratis en zonder verplichtingen.</p>
+      <div class="contact-details">
+        <div class="contact-item">
+          <span class="contact-icon">💬</span>
+          <a href="https://wa.me/31631297550" target="_blank">WhatsApp — snelste reactie</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📍</span>
+          <span>Utrecht & omgeving · heel NL leverbaar</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">🪙</span>
+          <span>Monero (XMR) betaling geaccepteerd</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">⏱️</span>
+          <span>Reactie binnen een paar uur</span>
+        </div>
+      </div>
+      <a href="https://wa.me/31631297550?text=Hoi%20Mathijs!%20Ik%20wil%20graag%20meer%20weten%20over%20een%20Pi%20build." target="_blank" class="btn-primary" style="margin-top:2rem;display:inline-block">
+        💬 WhatsApp Mathijs direct
+      </a>
+    </div>
+    <div class="contact-form-wrap">
+      <div class="field"><label>Naam</label><input type="text" placeholder="Jouw naam" /></div>
+      <div class="field"><label>E-mail of WhatsApp</label><input type="text" placeholder="jij@example.nl of +31 6..." /></div>
+      <div class="field"><label>Jouw vraag of idee</label><textarea rows="5" placeholder="Wat wil je bouwen? Wat is je budget? Alles is goed..."></textarea></div>
+      <button class="btn-primary" style="width:100%" onclick="contactSend(this)">Verstuur →</button>
+    </div>
+  </div>
+</section>
+
+<!-- BETALING -->
+<section class="betaling" id="betaling">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-eyebrow">Betalen</span>
+      <h2>Veilig & flexibel betalen</h2>
+      <p>Kies de methode die bij jou past. Geen verborgen kosten, geen verrassingen.</p>
+    </div>
+
+    <div class="betaling-grid">
+      <div class="betaal-card">
+        <div class="betaal-icon">🏦</div>
+        <strong>iDEAL</strong>
+        <span>Via Mollie · €0,29 per transactie</span>
+        <a href="https://buy.mollie.com/jouwlink" target="_blank" class="mollie-btn">Betaal met iDEAL</a>
+      </div>
+      <div class="betaal-card">
+        <div class="betaal-icon">📱</div>
+        <strong>Tikkie</strong>
+        <span>Gratis · Snel via WhatsApp</span>
+        <a href="https://wa.me/31631297550?text=Hoi%20Mathijs!%20Ik%20wil%20graag%20een%20Tikkie%20ontvangen." target="_blank" class="mollie-btn" style="background:var(--red)">Vraag Tikkie aan</a>
+      </div>
+      <div class="betaal-card">
+        <div class="betaal-icon">💳</div>
+        <strong>Creditcard</strong>
+        <span>Via Mollie · Visa & Mastercard</span>
+        <a href="https://buy.mollie.com/jouwlink" target="_blank" class="mollie-btn">Betaal met card</a>
+      </div>
+      <div class="betaal-card">
+        <div class="betaal-icon">💵</div>
+        <strong>Contant</strong>
+        <span>Afhalen in Utrecht · Gratis</span>
+        <a href="https://wa.me/31631297550?text=Hoi%20Mathijs!%20Ik%20wil%20graag%20afhalen%20in%20Utrecht." target="_blank" class="mollie-btn" style="background:var(--grey,#445566)">Plan afhaalmoment</a>
+      </div>
+      <div class="betaal-card xmr">
+        <div class="betaal-icon">🪙</div>
+        <strong>Monero (XMR)</strong>
+        <span>Maximale privacy · Anoniem · Legaal</span>
+        <div class="xmr-label" style="margin-top:0.75rem">Mijn XMR adres (klik om te kopiëren)</div>
+        <div class="xmr-adres" onclick="copyXMR(this)" title="Klik om te kopiëren">
+          4AdUndXHHZ9pfQj27cSdXnE7Zk7zBwBwBwGGmwBwBwBwBwBwBwBwBwBwBwBwBwBwBwBwBwBwBwBwBwBwBwBwBw
+        </div>
+        <small style="color:var(--text-dim);font-size:0.7rem;display:block;margin-top:0.5rem">← Vervang dit door jouw echte XMR adres</small>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:3rem;padding:2rem;background:var(--bg-2);border:1px solid var(--border);border-radius:var(--radius-lg)">
+      <div class="section-eyebrow">Direct bestellen</div>
+      <h3 style="margin:0.5rem 0 1rem">Weet je al wat je wil?</h3>
+      <p style="color:var(--text-dim);max-width:500px;margin:0 auto 1.5rem">Stuur Mathijs een WhatsApp met je build-wens en budget. Ontvang binnen een paar uur een offerte en betaallink.</p>
+      <a href="https://wa.me/31631297550?text=Hoi%20Mathijs!%20Ik%20wil%20graag%20een%20Pi%20build%20bestellen.%20Mijn%20wens%3A%20" target="_blank" class="btn-primary" style="font-size:1rem;padding:1rem 2.5rem">
+        💬 WhatsApp Mathijs — direct bestellen
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-logo"><span class="logo-icon">⬡</span> Pi<span class="logo-accent">Forge</span></div>
+    <p class="footer-tagline">Mathijs Wouters · Utrecht · Custom Raspberry Pi Builds · Open source · Voor elk budget</p>
+    <div class="footer-links">
+      <a href="#builds">Builds</a>
+      <a href="#verhaal">Verhaal</a>
+      <a href="#configurator">Configureer</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <p class="footer-copy">© 2025 PiForge — Mathijs Wouters, Utrecht · Monero XMR betaling geaccepteerd</p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
